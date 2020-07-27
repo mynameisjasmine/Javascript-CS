@@ -17,3 +17,16 @@ function sum(arr) {
     }
     return total;
 }
+
+// The function below takes O(n) space, because we are pushing onto the new array and updating the length
+
+function double(arr) {
+    let newArr = [];
+    for (i = 0; i < arr.length; i++) {
+        newArr.push(2 * arr[i]);
+        
+    }
+    return newArr
+}
+
+console.log(double([1,2,3]));
