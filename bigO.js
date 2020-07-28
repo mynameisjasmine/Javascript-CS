@@ -19,6 +19,11 @@ function addup(n) {
 console.log(addup(6))
 
 
+//Logarithms are the inverse of exponents. For example: log2(8) = 3; this can be evaluated as: what to the power of 2 equals 8? The answer is 3, 2 * 2 * 2 = 8
+
+// The most common logarithms are binary logarithms (ie log2) another common one is base 10 (ie log10)
+
+
 
 
 
