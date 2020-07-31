@@ -23,7 +23,9 @@ console.log(addup(6))
 
 // The most common logarithms are binary logarithms (ie log2) another common one is base 10 (ie log10)
 
+let ar = [12, 15, 2, 5, 5,]
+function sorting(arr) {
+    return arr.sort()
+}
 
-
-
-
+console.log(sorting(ar));
