@@ -13,4 +13,19 @@ c: an integer representing the cost of a chocolate bar
 m: an integer representing the number of wrappers he can turn in for a free bar
 Note: Little Bobby will always turn in his wrappers if he has enough to get a free chocolate.*/
 
+// Solution in Python
 
+/* def chocolateFeast(n, c, m):
+    #the amount of choclte purchased is n // c
+    amount = n // c
+    
+    #wrappers is equal to amount
+    wrappers = amount
+    
+    #while loop which ends when wrappers is < m
+    while wrappers >= m:
+        new_bars = wrappers // m
+        amount += new_bars
+        wrappers = wrappers % m
+        wrappers += new_bars
+    return amount */
