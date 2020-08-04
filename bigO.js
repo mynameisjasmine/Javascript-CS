@@ -39,3 +39,18 @@ function countChar(str) {
 }
 
 console.log(countChar("hello"));
+
+
+function counting(str) {
+    let result = {};
+    for(let i = 0; i < str.length; i++) {
+        if (result[str[i]] > 0) {
+            result[str[i]]++;
+        } else {
+            result[str[i]] = 1;
+        };
+    }
+    return result;
+}
+
+console.log(counting("yess"));
