@@ -29,3 +29,13 @@ function sorting(arr) {
 }
 
 console.log(sorting(ar));
+
+// function takes in a string and returns a count of each character in the string
+
+function countChar(str) {
+    let count =  str.split("")
+    return count.length;
+    
+}
+
+console.log(countChar("hello"));
