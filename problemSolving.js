@@ -60,6 +60,6 @@
 4. Can you use the result or method for some other problem?
 5. Can you improve the performance of your solution?
 6. Can you think of other ways to refactor?
-7. How have other people solved this problem? 
+7. How have other people solved this problem?    
 */
 
