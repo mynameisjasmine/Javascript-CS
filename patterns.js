@@ -7,7 +7,7 @@
 // write a function which accepts 2 arrays. The function should return true if every value in the array has it's corresponding value squared in the 2nd array. The frequency of values must be the same
 
 
-    
+  // O(n2)  
 function same(arr1, arr2) {
     // first check the length, if the length of the 2 arrays are not equal this is an automatic false
     if (arr1.length !== arr2.length) {
