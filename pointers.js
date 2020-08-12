@@ -64,3 +64,12 @@ function countUniqueValues(arr) {
 console.log('unique:',countUniqueValues([1,1,2,3]));
 
 
+
+// this function returns a count of all 'true' values in an array
+
+function falsy(arr) {
+    let n = arr.filter(Boolean)
+    return n.length
+}
+
+console.log(falsy([false, 1, 3, 0, 5]));
