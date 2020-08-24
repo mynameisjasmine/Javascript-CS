@@ -30,7 +30,7 @@ function same(arr1, arr2) {
 
 // Write a function which accepts an array of integers and a number called n. The function should calculate the maximum sum of n consecutive elements in the array.
 
-// brute force solution
+// brute force solution - O(n2)
 function maxSubrraySum(arr, num) {
     if(num > arr.length) return null;
     let max = -Infinity // this helps if we get an array of negative numbers
@@ -47,6 +47,20 @@ function maxSubrraySum(arr, num) {
 }
 
 console.log(maxSubrraySum([2,4,5],2));
+
+/ Sliding Window Twechnique*/
+// Instead of re-looping through the array for each new set of numbers being added, this technique works by subtracting the first number at the beginning of the array and then adding the last number (at num) of the next set to be added. Time complexity is O(n)  
+function slidingMaxSum (arr, num) {
+    let maxSum = 0;
+    let texpSum = 0;
+    if(arr.length < num) return null;
+    for(let i = 0; i < num; i++) {
+        maxSum += arr[i]
+    }
+}
+
+
+
 
 
 // return a function within a function
