@@ -49,14 +49,20 @@ function maxSubrraySum(arr, num) {
 console.log(maxSubrraySum([2,4,5],2));
 
 / Sliding Window Twechnique*/
-// Instead of re-looping through the array for each new set of numbers being added, this technique works by subtracting the first number at the beginning of the array and then adding the last number (at num) of the next set to be added. Time complexity is O(n)  
+// Instead of re-looping through the array for each new set of numbers being added, this technique works by subtracting the first number at the beginning of the array and then adding the last number (at num) of the next set to be added. Time complexity is O(n) .
 function slidingMaxSum (arr, num) {
     let maxSum = 0;
-    let texpSum = 0;
+    let tempSum = 0;
     if(arr.length < num) return null;
     for(let i = 0; i < num; i++) {
         maxSum += arr[i]
     }
+     tempSum = maxSum
+    for( let i = num; i < arr.length; i++) {
+      tempSum = tempSum - arr[i- num] + arr[i]
+      maxSum = Math.max(maxSum, tempSum)
+    }
+    return maxSum
 }
 
 
