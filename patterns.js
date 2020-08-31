@@ -77,3 +77,8 @@ function redundant(str) {
 }
 
 console.log(redundant('hello'))
+
+// given 2 positive integers, find out if the 2 numbers have the same frequency of digits
+function sameFreq(num1, num2) {
+
+}
