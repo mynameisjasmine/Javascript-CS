@@ -100,3 +100,7 @@ function collectOdds(arr) {
 }
 
 collectOdds([1,2,3,4,5])
+
+
+
+//collect odds function using pure recursion, this example will use the .concat method
