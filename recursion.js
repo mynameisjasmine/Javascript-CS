@@ -75,4 +75,28 @@
      return total
  }
 
- factorialIter(4)
+ factorialIter(4); 
+
+/Helper Method Recursion */
+
+// common used when one needs to compile somehting such as an array or a list of data
+// has an 'outer' function (that is NOT recursive), which calls an 'inner' function (that IS recursive)
+
+
+function collectOdds(arr) {
+    let result = [];
+    
+    function helper(input) {
+       if(input.length ===0) return; //base case
+        if(input[0] % 2 !== 0) {
+            result.push(input[0])
+        }
+       helper(input.slice(1))
+       console.log('input:',input) 
+    }
+    helper(arr)
+    
+    return result;
+}
+
+collectOdds([1,2,3,4,5])
