@@ -103,4 +103,19 @@ collectOdds([1,2,3,4,5])
 
 
 
-//collect odds function using pure recursion, this example will use the .concat method
+//collect odds function using pure recursion, this example will use the .concat method (this will not use a helper method)
+
+function collectOddsPure(arr) {
+    let newArr = [];
+
+    if(arr.length === 0) {
+        return newArr;
+    }
+
+    if(arr[0] % 2 !== 0) {
+        newArr.push(arr[0]);
+    }
+
+    newArr = newArr.concat(collectOddsPure(arr.slice(1)));
+    return newArr;
+}
