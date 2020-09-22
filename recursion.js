@@ -118,4 +118,19 @@ function collectOddsPure(arr) {
 
     newArr = newArr.concat(collectOddsPure(arr.slice(1)));
     return newArr;
-}
+    
+   }
+    
+   / Pure Recursion Tips */
+
+    /* 
+    - For arrays use methods such as slice, the spread operator and concat that make copies of arrays so you don't mutate them
+
+    - Remember strings are immutable so you'll need to use methods like slice and substr or subtring to make copies of strings
+
+    - To make copies of objects, use Object.assign or the spread operator
+    */
+    
+
+ console.log(Math.pow(3,0));
+  
