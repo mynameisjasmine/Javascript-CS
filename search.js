@@ -6,3 +6,57 @@ function linSearch (arr, value) {
 }
 
 console.log(linSearch([11, 22, 33, 44, 55], 8));
+
+// Using a for loop
+
+function linearSearch (arr, val) {
+    for(let i = 0; i < arr.length;i++) {
+        if (arr[i] === val) return i;
+    }
+    return -1;
+}
+
+console.log('looped search:', linearSearch([66, 77, 88, 99], 3));
+
+
+// Binary Search O(log n) - only works on sorted arrays
+
+
+
+function bsearch(arr, value) {
+    let midValue = Math.floor(arr.length / 2)
+    let left = arr[0]
+    let right = arr[arr.length-1]
+    let leftIndex = arr.indexOf(left)
+    let rightIndex = arr.indexOf(right)
+    let inputValueIndex = arr.indexOf(value)
+  
+    while(left < right) {
+    if (arr.indexOf(value) === -1) {
+      
+        return 'This number is not in the array';
+          }
+    if (arr.indexOf(value) === midValue || inputValueIndex === leftIndex || inputValueIndex === rightIndex) {
+              return inputValueIndex
+          }
+    if(inputValueIndex < midValue) {
+      leftIndex++
+      }
+      //if leftIndex === inputValueIndex, return leftIndex, else start the loop over again
+    if(leftIndex === inputValueIndex) {
+       return leftIndex
+    } 
+  
+    if(inputValueIndex > midValue) {
+      rightIndex--
+    }
+  
+    if(rightIndex === inputValueIndex) {
+      return rightIndex
+    }
+      
+    }  
+    } 
+    
+    console.log('bin search',bsearch([22,33,44,55,58,60,66],58) );
+    
