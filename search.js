@@ -21,6 +21,16 @@ console.log('looped search:', linearSearch([66, 77, 88, 99], 3));
 
 // Binary Search O(log n) - only works on sorted arrays
 
+// my verion of the indexOf method
+function getIndex(arr,value) {
+    for(i=0; i< arr.length; i++) {
+      if(arr[i] === value) {
+        return console.log(i)
+      } else {
+        return console.log('-1')
+      }
+    }
+  }
 
 
 function bsearch(arr, value) {
