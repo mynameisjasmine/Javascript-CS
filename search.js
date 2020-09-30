@@ -32,7 +32,7 @@ function getIndex(arr,value) {
     }
   }
 
-
+// naive solution for binary search
 function bsearch(arr, value) {
     let midValue = Math.floor(arr.length / 2)
     let left = arr[0]
@@ -69,4 +69,33 @@ function bsearch(arr, value) {
     } 
     
     console.log('bin search',bsearch([22,33,44,55,58,60,66],58) );
+
+    // refactored binary search function
+    function updatedBSearch(arr, value) {
+
+        let left = 0;
+        let right = arr.length -1;
+        let middle = Math.floor((left + right) / 2);
+        
+        while(arr[middle] !== value && left <= right) {
+            if(value < arr[middle]) {
+                right = middle - 1;
+            } else {
+                left = middle + 1;
+            }
+            middle = Math.floor((left + right) / 2)
+            
+          }
+        
+      
+        console.log(left, middle, right)
+        if(arr[middle] == value) {
+        return middle;
+      
+        } else {
+          return -1
+        }
+      }
+
+console.log(updatedBSearch('updated:',[22,33,44,55,58,60,66],33))
     
