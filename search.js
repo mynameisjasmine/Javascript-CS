@@ -121,3 +121,28 @@ function refactoredBSearch(arr, value) {
   
 
 console.log('refactored:',refactoredBSearch([22,33,44,55,58,60,66],33))
+
+
+
+// String search naive solution
+
+function strSearch (str1, str2) {
+    let count = 0;
+    let arr = [];
+    let string1 = str1.split('');
+    let string2 = str2.split('');
+  
+    for(i=0; string1[i]; i++) {
+      for(j=0; string2[j]; j++) {
+       if(str1[i] === str2[j]) {
+         arr.push(str1[i])
+       } 
+       }
+      }
+      return arr
+    }
+  
+    
+  
+  
+  console.log(strSearch('hello', 'ell'))
