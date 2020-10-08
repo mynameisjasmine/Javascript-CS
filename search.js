@@ -128,7 +128,6 @@ console.log('refactored:',refactoredBSearch([22,33,44,55,58,60,66],33))
 
 function strSearch (str1, str2) {
     let count = 0;
-    let arr = [];
     
   
     for(i=0; str1[i]; i++) {
@@ -138,10 +137,14 @@ function strSearch (str1, str2) {
         console.log('BREAK');
            break
            
-          } 
+          }
+          if(j === str2.length - 1) {
+              console.log('I found one!');
+              count ++
+          }
         }
       }
-    //   return arr
+    return console.log('count is:', count);;
     }
   
     
