@@ -129,17 +129,19 @@ console.log('refactored:',refactoredBSearch([22,33,44,55,58,60,66],33))
 function strSearch (str1, str2) {
     let count = 0;
     let arr = [];
-    let string1 = str1.split('');
-    let string2 = str2.split('');
+    
   
-    for(i=0; string1[i]; i++) {
-      for(j=0; string2[j]; j++) {
-       if(str1[i] === str2[j]) {
-         arr.push(str1[i])
-       } 
-       }
+    for(i=0; str1[i]; i++) {
+      for(j=0; j < str2.length; j++) {
+          console.log(i, str2[j]);
+       if(str2[j] !== str1[i + j]) {
+        console.log('BREAK');
+           break
+           
+          } 
+        }
       }
-      return arr
+    //   return arr
     }
   
     
