@@ -151,3 +151,25 @@ function strSearch (str1, str2) {
   
   
   console.log(strSearch('hello', 'ell'))
+
+  
+
+  // KMD string search
+
+  function kmd (str) {
+      let p1 = 0;
+      let p2 = 1;
+      let table = []
+      
+    while(str[p1] !== str[p2] && p2 < str.length) {
+        p2++
+        console.log(str[p2]);
+
+        if(str[p1] === str[p2]) {
+            // store it in the table 
+        }
+    }
+   return console.log('I found a match!', str[p2]);
+  }
+
+  console.log(kmd('howwyh'));
