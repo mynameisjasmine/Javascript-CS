@@ -169,7 +169,7 @@ function strSearch (str1, str2) {
             // store it in the table 
         }
     }
-   return console.log('I found a match!', str[p2]);
+   return console.log('I found a match!', p2);
   }
 
   console.log(kmd('howwyh'));
