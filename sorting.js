@@ -23,34 +23,39 @@
  }
 
 
- function bubSort(arr) {
-     
-    for(let i = 0; arr[i]; i++) {
-        for(let j = 0; j < arr.length; j++) {
-            if(arr[j] > arr[j + 1]) {
-                let temp = arr[j]
-                arr[j] = arr[j + 1]
-                arr[j + 1] = temp
-              }
-              console.log('this is i ', i); 
-              console.log('the array: ', arr);
-
-          }
-     }
-     return arr
- }
-
 //  function bubSort(arr) {
-//      let end = arr.length - 1
-//      for(let i = end; arr[i]; i--) {
-//         for(let j = 0; j < end; j++) {
+     
+//     for(let i = 0; arr[i]; i++) {
+//         for(let j = 0; j < arr.length; j++) {
+//             console.log('this is j: ', arr[j]);
 //             if(arr[j] > arr[j + 1]) {
-//                 swap(arr, arr[j], arr[j + 1])
-//             }
+//                 let temp = arr[j]
+//                 arr[j] = arr[j + 1]
+//                 arr[j + 1] = temp
+//               }
+//               console.log('this is i ', i); 
+//               console.log('the array: ', arr);
 
-//         }
+//           }
 //      }
-//      return arr;
+//      return arr
 //  }
 
- console.log(bubSort([5, 4, 3, 7]));
+ 
+//this version  is faster as it eliminates going over the already sorted items on the end of the array
+function bubSort(arr) {
+     
+     for(let i = arr.length; i > 0; i--) {
+        for(let j = 0; j < i - 1; j++) {
+            if(arr[j] > arr[j + 1]) {
+            let temp = arr[j]
+            arr[j] = arr[j + 1]
+            arr[j + 1] = temp
+        }
+
+        }
+     }
+     return arr;
+ }
+
+ console.log(bubSort([5, 4, 3, 8, 7]));
