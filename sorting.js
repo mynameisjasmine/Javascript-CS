@@ -1,4 +1,5 @@
-// Bubble sort implementation - not very efficient, not commonly used
+/ Bubble sort - not very efficient, not commonly used */
+
 
 
 /*
@@ -43,19 +44,64 @@
 
  
 //this version  is faster as it eliminates going over the already sorted items on the end of the array
-function bubSort(arr) {
+// Time complexity is O(n2)
+// function bubSort(arr) {
      
-     for(let i = arr.length; i > 0; i--) {
-        for(let j = 0; j < i - 1; j++) {
-            if(arr[j] > arr[j + 1]) {
-            let temp = arr[j]
-            arr[j] = arr[j + 1]
-            arr[j + 1] = temp
-        }
+//      for(let i = arr.length; i > 0; i--) {
+//         for(let j = 0; j < i - 1; j++) {
+//             if(arr[j] > arr[j + 1]) {
+//             let temp = arr[j]
+//             arr[j] = arr[j + 1]
+//             arr[j + 1] = temp
+//         }
 
-        }
+//         }
+//      }
+//      return arr;
+//  }
+
+//  console.log(bubSort([5, 4, 3, 8, 7]));
+
+
+
+  / Selection Sort */ 
+ //Similar to Bubble Sort but instead of first placing large values into sorted position, it places small values into sorted position.
+
+
+ function select(arr) {
+
+    const swap = (arr, idx1, idx2) => {
+        [arr[idx1], arr[idx2]] =  [arr[idx2], arr[idx1]]
      }
-     return arr;
- }
+     
+    for(let i = 0; arr[i]; i++) {
+         
+        let min = i;
+         
+         for(let j = i + 1; j < arr.length; j++) {
 
- console.log(bubSort([5, 4, 3, 8, 7]));
+            console.log(arr[min], arr[j]);
+            
+             if(arr[min] > arr[j]) {
+        
+                min = j;
+               
+             } 
+                 
+        console.log('this is lowest: ', arr[min]);
+                
+        }
+        swap(arr, i, min)
+        
+        console.log('arr now: ', arr);
+        
+
+       }
+return arr;
+
+    }
+ 
+
+
+
+console.log(select([7, 8, 1, -2, 4, ]))
