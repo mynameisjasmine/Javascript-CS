@@ -91,7 +91,12 @@
         console.log('this is lowest: ', arr[min]);
                 
         }
-        swap(arr, i, min)
+
+        if(i !== min) {
+        
+          swap(arr, i, min)
+          
+        }
         
         console.log('arr now: ', arr);
         
@@ -104,4 +109,4 @@ return arr;
 
 
 
-console.log(select([7, 8, 1, -2, 4, ]))
+console.log(select([7, 8, 1, -2, 4, 3]))
