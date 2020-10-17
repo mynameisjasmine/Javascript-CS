@@ -65,48 +65,104 @@
 
 
   / Selection Sort */ 
+  
  //Similar to Bubble Sort but instead of first placing large values into sorted position, it places small values into sorted position.
+ // Time complexity is O(n2)
 
 
- function select(arr) {
+//  function select(arr) {
 
-    const swap = (arr, idx1, idx2) => {
-        [arr[idx1], arr[idx2]] =  [arr[idx2], arr[idx1]]
-     }
+//     const swap = (arr, idx1, idx2) => {
+//         [arr[idx1], arr[idx2]] =  [arr[idx2], arr[idx1]]
+//      }
      
-    for(let i = 0; arr[i]; i++) {
+//     for(let i = 0; arr[i]; i++) {
          
-        let min = i;
+//         let min = i;
+        
          
-         for(let j = i + 1; j < arr.length; j++) {
+//          for(let j = i + 1; j < arr.length; j++) {
 
-            console.log(arr[min], arr[j]);
+//             console.log(arr[min], arr[j]);
             
-             if(arr[min] > arr[j]) {
+//              if(arr[min] > arr[j]) {
         
-                min = j;
+//                 min = j;
                
-             } 
+//              } 
                  
-        console.log('this is lowest: ', arr[min]);
+//         console.log('this is lowest: ', arr[min]);
                 
-        }
+//         }
 
-        if(i !== min) {
+//         if(i !== min) {
         
-          swap(arr, i, min)
+//           swap(arr, i, min)
           
-        }
+//         }
         
-        console.log('arr now: ', arr);
+//         console.log('arr now: ', arr);
         
 
-       }
-return arr;
+//        }
+// return arr;
 
-    }
+//     }
  
 
 
 
-console.log(select([7, 8, 1, -2, 4, 3]))
+// console.log(select([7, 8, 1, -2, 4, 3]));
+
+
+// Insertion Sort 
+
+/* 
+- Start by picking the second element in the array
+- Compare the second element to the one before it and swap if necessary
+- Continue to the next element and if it is in the incorrect spot, iterate through the sorted potion (i.e the left side) to place the element in the correct place
+- Repeat until the array is sorted
+- Return the sorted array
+*/
+
+// function insertion(arr) {
+
+//     for(let i = 0; arr[i]; i++) {
+//         // let curr = i;
+//      const swap = (arr, idx1, idx2) => {
+//          [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
+//      }
+//         for(let j = 0; j < arr.length; j++) {
+//             console.log(arr[j], arr[j + 1]);
+//             if(arr[j] > arr[j + 1]) {
+//              swap(arr, j, j + 1)
+             
+//              console.log('update!!! array: ', arr);
+             
+             
+//             }
+//         }
+//     }
+//     return arr;
+// }
+
+
+function insertion(arr) {
+    let curr;
+    for(let i = 1; arr[i]; i++) {
+        curr = arr[i];
+        for(let j = i -1; j >= 0 && arr[j] > curr; j--) {
+            arr[j+1] = arr[j]
+            if(arr[j] > curr) {
+              arr[j] = curr;
+            }
+        }
+        
+    }
+    return arr;
+}
+
+console.log(insertion([88,20, 2, 1, 9, 76, 4, -2]));  
+                    //    [4,4,3,1,5]
+
+
