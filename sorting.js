@@ -45,6 +45,8 @@
  
 //this version  is faster as it eliminates going over the already sorted items on the end of the array
 // Time complexity is O(n2)
+// Space complexity is O(1)
+
 // function bubSort(arr) {
      
 //      for(let i = arr.length; i > 0; i--) {
@@ -68,6 +70,7 @@
   
  //Similar to Bubble Sort but instead of first placing large values into sorted position, it places small values into sorted position.
  // Time complexity is O(n2)
+ // Space complexity is O(1)
 
 
 //  function select(arr) {
@@ -116,6 +119,8 @@
 
 
 // Insertion Sort 
+// Time complexity is O(n2)
+// Space complexity is O(1)
 
 /* 
 - Start by picking the second element in the array
@@ -125,44 +130,58 @@
 - Return the sorted array
 */
 
-// function insertion(arr) {
 
-//     for(let i = 0; arr[i]; i++) {
-//         // let curr = i;
-//      const swap = (arr, idx1, idx2) => {
-//          [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
-//      }
-//         for(let j = 0; j < arr.length; j++) {
-//             console.log(arr[j], arr[j + 1]);
-//             if(arr[j] > arr[j + 1]) {
-//              swap(arr, j, j + 1)
-             
-//              console.log('update!!! array: ', arr);
-             
-             
+
+// function insertion(arr) {
+//     let curr;
+//     for(let i = 1; arr[i]; i++) {
+//         curr = arr[i];
+//         for(let j = i -1; j >= 0 && arr[j] > curr; j--) {
+//             arr[j+1] = arr[j]
+//             if(arr[j] > curr) {
+//               arr[j] = curr;
 //             }
 //         }
+        
 //     }
 //     return arr;
 // }
 
+// console.log(insertion([4,3, 2, 1]));  
+                    //    [4,4,3,1,5];
 
-function insertion(arr) {
-    let curr;
-    for(let i = 1; arr[i]; i++) {
-        curr = arr[i];
-        for(let j = i -1; j >= 0 && arr[j] > curr; j--) {
-            arr[j+1] = arr[j]
-            if(arr[j] > curr) {
-              arr[j] = curr;
-            }
+
+// Merge Sort 
+
+/* 
+- Create an empty array, take a look at the smallest values in each array input
+- While there are still values we haven't looked at:
+     - if the value in the first array is smaller than the value in the second array, push the value in the first array into our results array, move on to the next value in the first array
+     - if the value in the first array is larger than the value in the second array, push the value in the second array into our results, move on to the next value in the second array
+     - once we exhaust one array, push in all remaining values from the other array
+*/
+
+
+function merge(arr1, arr2) {
+    let results = [];
+    let i = 0;
+    let j = 0;
+
+    while(i < arr1.length && j < arr2.length) {
+        
+        if(arr1[i] < arr2[j]) {
+            results.push(arr1[i])
+            i++
+        } else {
+            results.push(arr2[j]) 
+                j++
+            
         }
         
     }
-    return arr;
+    
+    return results;
 }
 
-console.log(insertion([88,20, 2, 1, 9, 76, 4, -2]));  
-                    //    [4,4,3,1,5]
 
-
+console.log(merge([1,10,50], [2,14,99,100]));
