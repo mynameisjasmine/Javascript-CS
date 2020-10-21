@@ -174,14 +174,23 @@ function merge(arr1, arr2) {
             i++
         } else {
             results.push(arr2[j]) 
-                j++
-            
+            j++
         }
-        
+    }
+    
+    while(i < arr1.length) {
+        results.push(arr1[i])
+        i++;
+         
+    }
+    while(j < arr2.length) {
+        results.push(arr2[j])
+        j++;
+         
     }
     
     return results;
 }
 
 
-console.log(merge([1,10,50], [2,14,99,100]));
+console.log(merge([1, 20], [2,14, 99, 100]));
