@@ -161,7 +161,7 @@
      - once we exhaust one array, push in all remaining values from the other array
 */
 
-
+//This function works when merging 2 sorted array
 function merge(arr1, arr2) {
     let results = [];
     let i = 0;
@@ -194,3 +194,29 @@ function merge(arr1, arr2) {
 
 
 console.log(merge([1, 20], [2,14, 99, 100]));
+
+
+//This function is for merging 2 unsorted arrays
+
+/* 
+- Break up the arrays into halves until you have arrays that are empty or contain 1 element
+- Once you have the smaller arrays, merge them back (using the merge function above) with the other sorted arrays until you are back at the full length of the array
+*/
+function mergeSort(arr) {
+    //base case
+    if(arr.length <= 1) return arr;
+
+    // split the array in half
+    let mid = Math.floor(arr.length / 2)
+    
+    //using recursion
+    let left = mergeSort(arr.slice(0, mid))
+    let right = mergeSort(arr.slice(mid))
+    
+    //using the previous merge function
+    return merge(left, right);
+
+}
+console.log(mergeSort([1,2,3,4,5,6]))
+
+//console.log(mergeSort([1,2,3,4,5,6]));
