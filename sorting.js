@@ -217,6 +217,56 @@ function mergeSort(arr) {
     return merge(left, right);
 
 }
-console.log(mergeSort([1,2,3,4,5,6]))
+console.log(mergeSort([10,24,76,73]));
 
-//console.log(mergeSort([1,2,3,4,5,6]));
+
+/ Quick Sort */
+
+/*
+- Like merge sort, takes advantage of the fact that arrays of 1 or 0 are always sorted
+- Works by selecting one element (called a pivot) and finding the index where the pivot should end up in the sorted array
+- Once the pivot is positioned appropriately, quick sort can be applied on either side of the pivot 
+*/
+
+// Pivot Helper Function
+/*
+- This function will designate an element as the pivot
+- Values less than the pivot are moved to the left, values greater than the pivot are moved to the right
+- The order on either side of the pivot doesn't matter
+- The helper should do this in place, it should not make a new array
+- When complete the helper should return the index of the pivot
+*/
+
+//Pivot Helper Psuedocode
+/*
+- Function will take 3 arguments, an array, start index, end index (arr.length - 1)
+- Choose the pivot from the start of the array
+- Store the current pivot index in a variable (this will keep track of where the pivot should end up)
+- Loop through the array
+    - if the pivot is greater than the current element, increment the pivot index variable, then swap the current element with the element at the pivot index
+- Swap the starting element (pivot) with the pivot index (whatever is currently at the index of what the new pivot incrrement is)
+- Return the pivot index
+*/
+
+function pivotHelper(arr, start=0, end=arr.length+1) {
+    let pivot = arr[start];
+    let swapIdx = start;
+    const swap = (arr, idx1, idx2) => {
+        [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
+    }
+    
+    for(let i = start + 1; arr[i]; i++) {
+        if(pivot > arr[i])  {
+            swapIdx++
+            swap(arr, swapIdx, i)
+
+        }
+    }
+    // swap pivot index
+    swap(arr, start, swapIdx)
+    console.log('final array: ', arr);
+    return swapIdx;
+}
+
+console.log(pivotHelper([4,8,2,1,5,7,6,3]));
+
