@@ -220,7 +220,7 @@ function mergeSort(arr) {
 console.log(mergeSort([10,24,76,73]));
 
 
-/ Quick Sort */
+/ Quick Sort */ // Time Complexity  best case O(n log n) worst case O(n2)
 
 /*
 - Like merge sort, takes advantage of the fact that arrays of 1 or 0 are always sorted
@@ -248,7 +248,7 @@ console.log(mergeSort([10,24,76,73]));
 - Return the pivot index
 */
 
-function pivotHelper(arr, start=0, end=arr.length+1) {
+function pivotHelper(arr, start=0, end=arr.length - 1) {
     let pivot = arr[start];
     let swapIdx = start;
     const swap = (arr, idx1, idx2) => {
@@ -269,4 +269,23 @@ function pivotHelper(arr, start=0, end=arr.length+1) {
 }
 
 console.log(pivotHelper([4,8,2,1,5,7,6,3]));
+
+
+//Quick Sort Psuedocode
+/*
+- Call the pivot helper on the array
+- When the helper returns the updated pivot index, we recursively call the pivot helper on the subarray to the left of that index and to the subarray to the right of that index
+- Your base case occurs when a subarray has less than 2 elements 
+*/
+
+function quickSort(arr, left=0, right= arr.length - 1) {
+    if(left < right) {
+  let pivotIndex = pivotHelper(arr, left, right);
+  //left
+  quickSort(arr, left, pivotIndex - 1)
+  //right
+  quickSort(arr, pivotIndex + 1, right)
+ }
+ return arr;
+}
 
