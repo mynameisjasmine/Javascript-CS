@@ -220,7 +220,7 @@ function mergeSort(arr) {
 console.log(mergeSort([10,24,76,73]));
 
 
-/ Quick Sort */ // Time Complexity  best case O(n log n) worst case O(n2)
+/ Quick Sort */ // Time Complexity  best case O(n log n) worst case O(n*2)
 
 /*
 - Like merge sort, takes advantage of the fact that arrays of 1 or 0 are always sorted
@@ -268,7 +268,7 @@ function pivotHelper(arr, start=0, end=arr.length - 1) {
     return swapIdx;
 }
 
-console.log(pivotHelper([4,8,2,1,5,7,6,3]));
+// console.log(pivotHelper([4,8,2,1,5,7,6,3]));
 
 
 //Quick Sort Psuedocode
@@ -289,3 +289,79 @@ function quickSort(arr, left=0, right= arr.length - 1) {
  return arr;
 }
 
+console.log('quickSort: ',quickSort([11, 3, 6, 4, 9, 12,]));
+
+
+/ Radix Sort */ //Time Complexity is O(nk)
+
+/*
+- Is an integer sorting alogorithm
+- Does not use comparisons for sorting
+- Exploits the fact that information about a size of a number is encoded in the number of digits 
+*/
+
+
+// Radix Sort Helper 1 (this returns the value in each number placement i.e 0 will return the integer in the ones place etc)
+
+function getDigit(num, place) {
+    return Math.floor(Math.abs(num)) / Math.pow(10, place) % 10
+}
+
+console.log(getDigit(1243, 0));
+
+// Radix Sort Helper 2 (this helper will tell us how many digits are in a number)
+
+function digitCount(num) {
+    let count = 0;
+    let arr = num.toString(10) // using a base of 10 for the number
+    let arr1 = arr.split('')
+    for(let i = 0; arr1[i]; i++) {
+        if(arr1[i] !== '-') {
+      count += 1
+     }
+    }
+    return count
+}
+
+console.log('the integer count is: ', digitCount(0));
+
+// Radix Sort Helper 3 (this will take an array of digits and tell us which number has the most digits)
+
+function mostDigits(arr) {
+    let ct = []
+    for(let i = 0; arr[i]; i++) {
+        ct.push(digitCount(arr[i]))
+}
+return Math.max(...ct)
+}
+
+console.log('most digits: ', mostDigits([12, 1, 345, 124578]));
+
+// Radix Sort Pseudocode
+
+/*
+- Define a function that accepts an array of numbers
+- Figure out how many digits the largest number has
+- Loop from k up to that largest number of digits
+- For each iteration of the loop:
+  - create buckets for each digit 0-9 (basically an empty array that will have each index be another empty array)
+  - place each number in the corresponding bucket based on the kth digit
+-  
+*/
+
+function radix (arr) {
+  let digits = mostDigits(arr)
+  for(let i = 0; i < digits; i++) {
+
+      let bucket = Array.from({length: 10}, () => [])
+      for(let j = 0; j < arr.length; j++) {
+          let num = getDigit(arr[j], i)
+          bucket[num].push([arr[j]])
+      }
+       arr = [].concat(...bucket)
+    
+  }
+  return arr;
+}
+
+console.log('radix check: ',radix([55, 3037, 1]));
