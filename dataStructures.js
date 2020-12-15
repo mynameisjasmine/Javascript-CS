@@ -94,6 +94,23 @@ class SinglyLinkedList {
     return console.log('this is p1 value:',p1.value);
   }
 
+  // creating a shift method (opposite to pop, this removes a node from the beginning of a list)
+    /* Psuedocode
+    - If there are no nodes return undefined
+    - Store the current head property in a variable
+    - Set the head property to be the current head's next property 
+    - Decrement the length by one
+    - Return the value of the node removed
+    */
+
+    shift() {
+     if(!this.head) return undefined;
+     let currHead = this.head;
+     this.head = currHead.next;
+     this.length--
+     return currHead;
+    }
+
   print() {
     let curr = this.head
     if(!this.head) return undefined;
@@ -114,6 +131,8 @@ list.push('Today')
 list.push('yipee')
 
 // list.print()
-list.pop()
-list.print()
-// console.log(list);
+// list.pop()
+// list.print()
+console.log(list);
+list.shift()
+console.log(list);
