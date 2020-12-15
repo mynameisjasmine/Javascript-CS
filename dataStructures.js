@@ -82,8 +82,14 @@ class SinglyLinkedList {
     
     this.tail = p2
     p2.next = null
-
     this.length --
+     
+    //make sure to change head and tail to null if we pop off the last remaining or sole node
+    if(this.length === 0) {
+        this.head = null;
+        this.tail = null;
+    }
+
 
     return console.log('this is p1 value:',p1.value);
   }
