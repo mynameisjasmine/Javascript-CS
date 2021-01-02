@@ -135,7 +135,29 @@ class SinglyLinkedList {
       return this;
   }
 
-  print() {
+  // creating a get method
+    /* Psuedocode
+    - This method accepts an index as an argument
+    - If the index is less than zero or greater than or equal to the length of the list, return null
+    - Loop through the entire list until you reach the index then return the node at that specific index
+    */
+    
+    get(index) {
+      let count = 0;
+      let curr = this.head;
+      if(index <= 0 || index >= this.length) {
+        return null;
+      } else {
+        while(count < index) {
+          curr = curr.next
+          count++
+         }
+      }
+      // return curr.value;
+     return console.log(curr.value);
+    }
+  
+    print() {
     let curr = this.head
     if(!this.head) return undefined;
     
@@ -157,6 +179,9 @@ list.push('yipee')
 // list.print()
 // list.pop()
 // list.print()
-console.log(list);
-list.unshift('Sup!')
-console.log(list);
+// console.log(list);
+// list.unshift('Sup!')
+list.get(0)
+
+
+
