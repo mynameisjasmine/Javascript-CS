@@ -111,6 +111,28 @@ class SinglyLinkedList {
      return currHead;
     }
 
+    // creating an unshift method (adds a node to the beginning of a list)
+    /* Psuedocode
+    - If there is no head property on the list, set the head and the tail to be the newly created node
+    - 
+    - Set the head property to be the current head's next property 
+    - DeIncrement the length by one
+    - Return the value of the node removed
+    */
+
+    unshift(val) {
+      let newNode = new Node(val)
+      if(!this.head) {
+        this.head =  newNode; 
+        this.tail = this.head;
+      } else {
+        newNode.next = this.head;
+        this.head = newNode;
+      }
+      this.length++;
+      return this;
+  }
+
   print() {
     let curr = this.head
     if(!this.head) return undefined;
@@ -134,5 +156,5 @@ list.push('yipee')
 // list.pop()
 // list.print()
 console.log(list);
-list.shift()
+list.unshift('Sup!')
 console.log(list);
