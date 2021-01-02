@@ -113,11 +113,13 @@ class SinglyLinkedList {
 
     // creating an unshift method (adds a node to the beginning of a list)
     /* Psuedocode
+     - This method should accept a value
+    - Create a new node using the value passed to the function
     - If there is no head property on the list, set the head and the tail to be the newly created node
-    - 
-    - Set the head property to be the current head's next property 
-    - DeIncrement the length by one
-    - Return the value of the node removed
+    - Set the new node's next property to be the current head
+    - Set the new node to be the new head
+    - Increment the length by one
+    - Return the value of the list
     */
 
     unshift(val) {
