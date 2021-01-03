@@ -156,7 +156,23 @@ class SinglyLinkedList {
       // return curr.value;
      return console.log(curr.value);
     }
-  
+
+    // creating a set method
+    /* Psuedocode
+    - This method accepts an index as an argument
+    - If the index is less than zero or greater than or equal to the length of the list, return null
+    - Loop through the entire list until you reach the index then return the node at that specific index
+    */
+    
+   set(index,val) {
+     if(!this.head) {
+       return undefined;
+     } else {
+      get(index);
+     }
+    
+
+   }
     print() {
     let curr = this.head
     if(!this.head) return undefined;
