@@ -159,9 +159,10 @@ class SinglyLinkedList {
 
     // creating a set method
     /* Psuedocode
-    - This method accepts an index as an argument
-    - If the index is less than zero or greater than or equal to the length of the list, return null
-    - Loop through the entire list until you reach the index then return the node at that specific index
+    - This method accepts an index and a value as arguments
+    - Can use our previous get method
+    - If the node is not found return false
+    - If the node is found, update the value of that node to be the value of the argument passed to the function and return true
     */
     
    set(index,val) {
