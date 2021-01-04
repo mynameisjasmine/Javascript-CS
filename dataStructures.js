@@ -145,7 +145,7 @@ class SinglyLinkedList {
     get(index) {
       let count = 0;
       let curr = this.head;
-      if(index <= 0 || index >= this.length) {
+      if(index < 0 || index >= this.length) {
         return null;
       } else {
         while(count < index) {
@@ -153,8 +153,8 @@ class SinglyLinkedList {
           count++
          }
       }
-      // return curr.value;
-     return console.log(curr.value);
+      return curr;
+    //  return console.log(curr.value);
     }
 
     // creating a set method
@@ -162,16 +162,20 @@ class SinglyLinkedList {
     - This method accepts an index and a value as arguments
     - Can use our previous get method
     - If the node is not found return false
-    - If the node is found, update the value of that node to be the value of the argument passed to the function and return true
+    - If the node is found, update the value of that node to be the value of the argument passed to the function and return node value
     */
     
    set(index,val) {
-     if(!this.head) {
-       return undefined;
+     //this code does not work when using let instead of var
+     var foundNode = this.get(index);
+     
+     if(!this.head || !foundNode) {
+       return false;
      } else {
-      get(index);
+       foundNode.value = val
+      
      }
-    
+     return foundNode.value
 
    }
     print() {
@@ -198,7 +202,7 @@ list.push('yipee')
 // list.print()
 // console.log(list);
 // list.unshift('Sup!')
-list.get(0)
-
+// list.get(0)
+console.log(list.set(0, 'yolo'));
 
 
