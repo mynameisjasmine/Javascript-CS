@@ -178,6 +178,11 @@ class SinglyLinkedList {
      return foundNode.value
 
    }
+
+   // insert - adding a node to the linked list at a specific position
+   insert(val) {
+     //use get method
+   }
     print() {
     let curr = this.head
     if(!this.head) return undefined;
