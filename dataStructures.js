@@ -191,7 +191,7 @@ class SinglyLinkedList {
     - Otherwise, using the get method, access the node at the index -1
     - Set the next property on that node to be the new node
     - Set the next property on the new node to be the previous node
-    - Increment the length
+    - Increment the length of the linked list
     */
 
    }
