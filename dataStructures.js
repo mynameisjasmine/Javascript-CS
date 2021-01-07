@@ -182,6 +182,15 @@ class SinglyLinkedList {
    // insert - adding a node to the linked list at a specific position
    insert(val) {
      //use get method
+
+     // creating an insert method
+    /* Psuedocode
+    - If the index is less than zero or greater than the lenght, return false
+    - 
+    - 
+    - 
+    */
+
    }
     print() {
     let curr = this.head
