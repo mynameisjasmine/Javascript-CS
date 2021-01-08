@@ -180,10 +180,8 @@ class SinglyLinkedList {
    }
 
    // insert - adding a node to the linked list at a specific position
-   insert(val) {
-     //use get method
 
-     // creating an insert method
+   // creating an insert method
     /* Psuedocode
     - If the index is less than zero or greater than the lenght, return false
     - If the index is the same as the length, push a new node to the end of the list
@@ -193,6 +191,10 @@ class SinglyLinkedList {
     - Set the next property on the new node to be the previous node
     - Increment the length of the linked list
     */
+   insert(val) {
+     //use get method
+
+     
 
    }
     print() {
