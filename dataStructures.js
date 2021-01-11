@@ -192,7 +192,7 @@ class SinglyLinkedList {
     - Increment the length of the linked list
     */
    insert(val) {
-     //use get method
+     //use existing get method to find a specific index
 
      
 
