@@ -74,3 +74,5 @@ function isAlphaNumeric(str) {
 }
 
 console.log(isAlphaNumeric("!"));
+
+[2,4,7,8,4]

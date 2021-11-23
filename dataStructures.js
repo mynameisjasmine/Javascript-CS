@@ -162,7 +162,8 @@ class SinglyLinkedList {
     - This method accepts an index and a value as arguments
     - Can use our previous get method
     - If the node is not found return false
-    - If the node is found, update the value of that node to be the value of the argument passed to the function and return node value
+    - If the node is found, update the value of that node to be the value of the argument passed to the function
+     and return node value
     */
     
    set(index,val) {
@@ -183,7 +184,7 @@ class SinglyLinkedList {
 
    // creating an insert method
     /* Psuedocode
-    - If the index is less than zero or greater than the lenght, return false
+    - If the index is less than zero or greater than the length, return false
     - If the index is the same as the length, push a new node to the end of the list
     - If the index is 0, unshift a new node to the start of the list
     - Otherwise, using the get method, access the node at the index -1
@@ -191,12 +192,45 @@ class SinglyLinkedList {
     - Set the next property on the new node to be the previous node
     - Increment the length of the linked list
     */
-   insert(val) {
+   insert(index, val) {
      //use existing get method to find a specific index
+     if(index < 0 || index > this.length) {
+       return false
+     }
+     else if(index === this.length) {
+        return !!this.push(val)
+     }
+     else if(index === 0) {
+       return !!this.unshift(val)
+     } 
+       let insertNode = new Node(val)
+       let prevNode = this.get(index-1)
+       insertNode.next = prevNode.next
+       prevNode.next = insertNode
+       this.length++;
+       return true
+       
+       
+      
+      //  return this;
 
-     
+    }
+  //remove an item from a specific index
 
-   }
+  
+    remove(index) {
+      this.get(index);
+      if (this.length === 1) {
+       this.value = null;
+      //making sure that the sole remaining node is both the head and the tail
+      } else if(this.length === 2 && this.get(index-1) ) {
+        this.get(index-1) = this.head
+        this.tail = this.get(index-1)
+        //this.blah.next = null;
+      }
+      this.length--
+
+    }
     print() {
     let curr = this.head
     if(!this.head) return undefined;
@@ -222,6 +256,21 @@ list.push('yipee')
 // console.log(list);
 // list.unshift('Sup!')
 // list.get(0)
-console.log(list.set(0, 'yolo'));
+
+console.log(list.insert(0, 'Dude!'));
+console.log(list.insert(7, 'Checking'));
+console.log(list.insert(8, 'Testing'));
+console.log(list.insert(9, 'This works!!'));
+console.log(list.insert(1, 'QC'));
+console.log(list.insert(3, 'Misty'));
+console.log(list.insert(13, 'break it'));
+
+
+
+
+
+
+list.print();
+// console.log(list.set(0, 'yolo'));
 
 

@@ -52,7 +52,7 @@ function bsearch(arr, value) {
     if(inputValueIndex < midValue) {
       leftIndex++
       }
-      //if leftIndex === inputValueIndex, return leftIndex, else start the loop over again
+      //if leftIndex === inputValueIndex, return leftIndex, else start the loop over again...
     if(leftIndex === inputValueIndex) {
        return leftIndex
     } 
